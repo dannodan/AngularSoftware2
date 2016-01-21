@@ -14,6 +14,12 @@ angular.module('angularJsApp')
       'AngularJS',
       'Karma'
     ];
+
+    $scope.todoList = [
+    	{'title':'Wake Up','description':'Wake me up inside','done':true},
+    	{'title':'Put a Little Makeup','description':'Why you let your keys over the table?','done':false}
+    ];
+
     $scope.doPrimaryAction = function(event) {
 	    $mdDialog.show(
 	      $mdDialog.alert()
@@ -24,4 +30,15 @@ angular.module('angularJsApp')
 	        .targetEvent(event)
 	    );
 	  };
+
+	$scope.addTodo = function(event) {
+		$mdDialog.show(
+	      $mdDialog.alert()
+	        .title('Primary Action')
+	        .textContent('Primary actions can be used for one click actions')
+	        .ariaLabel('Primary click demo')
+	        .ok('Awesome!')
+	        .targetEvent(event)
+	    );
+	};
   });

@@ -1,13 +1,18 @@
 <div ng-controller="TodoController">
+	<md-content class="md-padding" layout="row" layout-align="center start">
+		<md-button class="md-fab" aria-label="Eat cake" data-ng-click="addTodo($event)">
+		    <md-icon class="material-icons">add</md-icon>
+		</md-button>
+	</md-content>
   	<md-content class="md-padding" layout="row" layout-wrap layout-align="center start">
 		<md-list flex="50" layout="column" layout-align="center">
-		  <md-list-item class="md-2-line secondary-button-padding" ng-click="doPrimaryAction($event)">
-		  	<md-icon class="material-icons" style="margin-right:20px;">face</md-icon>
+		  <md-list-item class="md-2-line secondary-button-padding" ng-click="doPrimaryAction($event)" md-swipe-right="deleteToDo($index)" data-ng-repeat="item in todoList track by $index">
+		  	<md-icon class="material-icons" style="margin-right:20px;">assignment</md-icon>
 		    <div class="md-list-item-text">
-		      <h3>Todo Name</h3>
-		      <p>Secondary text</p>
+		      <h3>{{item.title}}</h3>
+		      <p>{{item.description}}</p>
 		    </div>
-		    <md-button class="md-secondary" ng-click="doSecondaryAction($event)">More Info</md-button>
+		    <md-checkbox class="md-secondary md-padding" ng-model="item.done"></md-checkbox>
 		  </md-list-item>
 		</md-list>
 	</md-content>

@@ -9,13 +9,12 @@
           </md-card-title-text>
           <md-card-title-media>
             <div class="md-media-lg card-media">
-              <img src="{{contact.img}}">
+              <img ng-src="{{contact.img}}"/>
             </div>
           </md-card-title-media>
         </md-card-title>
         <md-card-actions layout="row" layout-align="end center">
-          <md-button>Action 1</md-button>
-          <md-button>Action 2</md-button>
+          <md-button data-ng-click="doPrimaryAction($event, contactList[$index])">Open Card</md-button>
         </md-card-actions>
       </md-card>
     </div>
@@ -28,13 +27,12 @@
           </md-card-title-text>
           <md-card-title-media>
             <div class="md-media-lg card-media">
-              <img src="{{contact.img}}">
+              <img ng-src="{{contact.img}}"/>
             </div>
           </md-card-title-media>
         </md-card-title>
         <md-card-actions layout="row" layout-align="end center">
-          <md-button>Action 1</md-button>
-          <md-button>Action 2</md-button>
+          <md-button data-ng-click="doPrimaryAction($event, contactList[$index])">Open Card</md-button>
         </md-card-actions>
       </md-card>
     </div>

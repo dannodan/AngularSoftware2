@@ -1,0 +1,14 @@
+<div ng-controller="TodoController">
+  	<md-content class="md-padding" layout="row" layout-wrap layout-align="center start">
+		<md-list flex="50" layout="column" layout-align="center">
+		  <md-list-item class="md-2-line secondary-button-padding" ng-click="doPrimaryAction($event)">
+		  	<md-icon class="material-icons" style="margin-right:20px;">face</md-icon>
+		    <div class="md-list-item-text">
+		      <h3>Todo Name</h3>
+		      <p>Secondary text</p>
+		    </div>
+		    <md-button class="md-secondary" ng-click="doSecondaryAction($event)">More Info</md-button>
+		  </md-list-item>
+		</md-list>
+	</md-content>
+</div>

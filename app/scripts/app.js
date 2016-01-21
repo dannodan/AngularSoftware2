@@ -10,26 +10,35 @@
  */
 angular
   .module('angularJsApp', [
+    'ngMaterial',
     'ngAnimate',
     'ngCookies',
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngAria',
+    'ui.router',
+    'ngMdIcons'
   ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
-      })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
-  });
+  .config(function ($stateProvider, $urlRouterProvider) {
+    $urlRouterProvider.otherwise('/contactos');
+    $stateProvider
+    .state('contactos', {
+      url: '/contactos',
+      templateUrl: 'views/contactos.html'
+    })
+    .state('todo', {
+      url: '/todo',
+      templateUrl: 'views/todo.html'
+    })
+    .state('extras', {
+      url: '/extras',
+      templateUrl: 'views/extras.html'
+    });
+  })
+
+  .controller('MyController', function($scope, $mdSidenav) {
+  $scope.openLeftMenu = function() {
+    $mdSidenav('left').toggle();
+  };
+});
